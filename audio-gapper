@@ -20,7 +20,7 @@ audio-gapper - Create random audio gaps to practice inner rhythm
 
 Usage:
 
-audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+  audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
 "
     exit
 fi
