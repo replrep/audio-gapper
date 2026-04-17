@@ -61,6 +61,6 @@ while true; do
     wait_loop "muted" "$mute_seconds"
 
     if [[ $random_mute_seconds -gt 0 ]]; then
-        wait_loop "random muted" $(( RANDOM % random_mute_seconds ))
+        wait_loop "random muted" $(( RANDOM % ( random_mute_seconds + 1 ) ))
     fi
 done
