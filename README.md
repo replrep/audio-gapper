@@ -29,7 +29,7 @@ shell functions.
 # Running
 
 ```
-$ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
 ```
 
 Type `ctrl-C` to exit.

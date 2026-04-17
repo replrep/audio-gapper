@@ -5,7 +5,7 @@ set -e
 # -
 # - Create random audio gaps to practice inner rhythm
 # -
-# - $ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+# - audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
 # -
 # - Version 1.0 2026-04-17 (C) 2026 Claus Brunzema
 # - License GPLv3
@@ -20,7 +20,7 @@ audio-gapper - Create random audio gaps to practice inner rhythm
 
 Usage:
 
-$ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
 "
     exit
 fi
