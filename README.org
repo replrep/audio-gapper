@@ -33,10 +33,10 @@ shell functions.
 Type ~ctrl-C~ to exit.
 
 
-* Misc
-
-Version 1.0 2026-04-17                     \\
-License GPLv3                              \\
-(C) 2026 Claus Brunzema                    \\
-https://www.cbrunzema.de/software.html     \\
-https://github.com/replrep/audio-gapper    \\
+#+BEGIN_VERSE
+Version 1.0 2026-04-17
+License GPLv3
+(C) 2026 Claus Brunzema
+https://www.cbrunzema.de/software.html
+https://github.com/replrep/audio-gapper
+#+END_VERSE
