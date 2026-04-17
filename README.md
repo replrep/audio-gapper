@@ -4,15 +4,16 @@ This is intended for musicians who want to see if they can continue
 playing locked into the rhythm of a backing track even if that
 supporting track drops out for a short while.
 
-audio-gapper runs in an endless loop (exit with `ctrl-c`) and mutes the
-master output after a configurable amount of seconds (default 20). The
-silence lasts for a configurable time (default 4 seconds).
+audio-gapper runs in an endless loop (exit with `ctrl-c`) and mutes
+the master output after a configurable amount of seconds (default 20).
+The silence lasts for a configurable time (default 4 seconds). The
+output volume is restored and the loop restarts.
 
 Just switching between muted and unmuted audio periodically might end
 up placing the silence at the exact same place in a looped song every
-time. To avoid this and to practice timing at different places of a
-song, a random amount of seconds can be added to the silence (default
-4 seconds).
+time. To avoid this and to practice inner timing at different places
+of a song, a random amount of seconds can be added to the silence
+(default up to 4 seconds).
 
 
 # Installation
