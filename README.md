@@ -1,10 +1,10 @@
-* Overview
+# Overview
 
 This is intended for musicians who want to see if they can continue
 playing locked into the rhythm of a backing track even if that
 supporting track drops out for a short while.
 
-audio-gapper runs in an endless loop (exit with ~ctrl-c~) and mutes the
+audio-gapper runs in an endless loop (exit with `ctrl-c`) and mutes the
 master output after a configurable amount of seconds (default 20). The
 silence lasts for a configurable time (default 4 seconds).
 
@@ -15,28 +15,29 @@ song, a random amount of seconds can be added to the silence (default
 4 seconds).
 
 
-* Installation
+# Installation
 
-It's just a shell script. Put it somewhere (e.g. on your ~$PATH~),
+It's just a shell script. Put it somewhere (e.g. on your `$PATH`),
 ensure that it is flagged executable and run it.
 
-audio-gapper uses WirePlumber's ~wpctl~ command to mute and unmute
+audio-gapper uses WirePlumber's `wpctl` command to mute and unmute
 audio. If you happen to use a different sound system (jack, pulseaudio
-etc.) you might need to adapt the calls in the ~mute~ and ~unmute~
+etc.) you might need to adapt the calls in the `mute` and `unmute`
 shell functions.
 
 
-* Running
+# Running
 
-~$ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]~
+```
+$ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+```
 
-Type ~ctrl-C~ to exit.
+Type `ctrl-C` to exit.
 
 
-#+BEGIN_QUOTE
-Version 1.0 2026-04-17
-License GPLv3
-(C) 2026 Claus Brunzema
-https://www.cbrunzema.de/software.html
-https://github.com/replrep/audio-gapper
-#+END_QUOTE
+---------------------------------------------------------------------------
+Version 1.0 2026-04-17 \
+License GPLv3 \
+(C) 2026 Claus Brunzema \
+<https://www.cbrunzema.de/software.html> \
+<https://github.com/replrep/audio-gapper>
