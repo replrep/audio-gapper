@@ -1,0 +1,66 @@
+#! /bin/bash
+set -e
+# -------------------------------------------------------------------------
+# - audio-gapper
+# -
+# - Create random audio gaps to practice inner rhythm
+# -
+# - $ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+# -
+# - Version 1.0 2026-04-17 (C) 2026 Claus Brunzema
+# - License GPLv3
+# - https://www.cbrunzema.de/software.html
+# - https://github.com/replrep/audio-gapper
+# -------------------------------------------------------------------------
+
+# - parameters and defaults -----------------------------------------------
+if [[ "$1" = "-h" ]] || [[ "$1" = "--help" ]] ; then
+    echo "
+audio-gapper - Create random audio gaps to practice inner rhythm
+
+Usage:
+
+$ audio-gapper [unmuted seconds] [muted seconds] [max random seconds]
+"
+    exit
+fi
+
+unmute_seconds=${1:-20}
+mute_seconds=${2:-4}
+random_mute_seconds=${3:-4}
+
+
+# - subroutines -----------------------------------------------------------
+function mute () {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
+}
+
+function unmute () {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+}
+
+function wait_loop () {
+    for i in $(seq "$2" | tac); do
+        printf "\r%s: %d\e[K" "$1" "$i"
+        sleep 1
+    done
+}
+
+
+# - setup -----------------------------------------------------------------
+trap 'unmute ; printf "\e[?25h" ' EXIT    # unmute and show cursor on exit
+printf "\e[?25l"                          # hide cursor
+
+
+# - main loop -------------------------------------------------------------
+while true; do
+    unmute
+    wait_loop "unmuted" "$unmute_seconds"
+
+    mute
+    wait_loop "muted" "$mute_seconds"
+
+    if [[ $random_mute_seconds -gt 0 ]]; then
+        wait_loop "random muted" $(( RANDOM % random_mute_seconds ))
+    fi
+done
